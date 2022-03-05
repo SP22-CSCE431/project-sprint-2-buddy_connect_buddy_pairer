@@ -17,7 +17,10 @@
     <tr>
       <td><%=user.firstName%> </td>
       <td><%=user.lastName%> </td>
-      <td><%= link_to 'Show', user%> </td>
+      <td><%if Admin.current_user_admin?(current_admin) %>
+        <%= link_to 'Show', user%> 
+      <% end %>
+      </td>
     </tr>
     <br/>
 <% end %>
